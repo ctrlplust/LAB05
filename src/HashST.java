@@ -3,7 +3,13 @@ import java.util.*;
 public class HashST<Key, Value> {
     private static final int INIT_CAPACITY = 16;
     private LinkedList<Node<Key, Value>>[] tabla;
-    
+
+/*SuppressWarnings("unchecked") se usa para evitar advertencias de tipo sin verificar, y la anotacion se coloca
+*porque somos conscientes de esto
+*Porque pasa esto?, Ya que java no permite crear un array de tipos genéricos directamente.
+*debido a la eliminación de tipos (type erasure) en tiempo de la ejecución.
+*y esto genera una advertencia de tipo sin verificar.
+*/
 @SuppressWarnings("unchecked")
     public HashST() {
         tabla = new LinkedList[INIT_CAPACITY]; // aquí se genera la advertencia
