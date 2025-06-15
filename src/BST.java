@@ -2,11 +2,13 @@ public class BST {
     private Node raiz;
 
     private class Node {
-        int key;
+        int key; // Numero de victorias para el Scoreboard
+        Strign value; // Nombre del jugador para el Scoreboard
         Node left, right;
 
-        Node(int item) {
-            key = item;
+        Node(int key, String value) {
+            this.key = key;
+            this.value = value;
             left = right = null;
         }
     }
@@ -15,19 +17,19 @@ public class BST {
         raiz = null;
     }
 
-    public void insert(int key) {
-        raiz = insertRec(raiz, key);
+    public void insert(int key, String value) {
+        raiz = insertRec(raiz, key, value);
     }
 
-    private Node insertRec(Node raiz, int key) {
+    private Node insertRec(Node raiz, int key , String value) {
         if (raiz == null) {
-            raiz = new Node(key);
+            raiz = new Node(key, value);
             return raiz;
         }
         if (key < raiz.key) {
-            raiz.left = insertRec(raiz.left, key);
+            raiz.left = insertRec(raiz.left, key, value);
         } else if (key > raiz.key) {
-            raiz.right = insertRec(raiz.right, key);
+            raiz.right = insertRec(raiz.right, key, value);
         }
         return raiz;
     }
@@ -39,7 +41,7 @@ public class BST {
     private void inorderRec(Node raiz) {
         if (raiz != null) {
             inorderRec(raiz.left);
-            System.out.print(raiz.key + " ");
+            System.out.print("Ganadas: " + raiz.key + " Jugador: " + raiz.value + "\n");
             inorderRec(raiz.right);
         }
     }
