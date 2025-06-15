@@ -12,4 +12,8 @@ javac -d bin src/*.java TESTING_CLASS/*.java
 
 ```
 java -cp bin Main
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 785493a (Agregando la clase Player)
