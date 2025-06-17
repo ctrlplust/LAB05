@@ -6,7 +6,7 @@ public class Player {
 
 // Constructor
     public Player(String Playername) {
-        thius.Playername = Playername;
+        this.Playername = Playername;
         this.wins = 0;
         this.losses = 0;
         this.draws = 0;
@@ -54,7 +54,7 @@ public class Player {
     // se sobreescribe el metodo equals para poder definir cuando dos objetos Player son iguales
     // en este caso, dos objetos Player son iguales si tienen el mismo nombre de jugador
     @Override
-    public boolean equals(Objecto o) {
+    public boolean equals(Object o) {
         if(this == o) return true; // Verifica si son el mismo objeto
         if(!(o instanceof Player))
         return false; // Esto esta viendo si es una instancia o no, No son iguales
@@ -64,8 +64,8 @@ public class Player {
 
 
     //depuracion para la impresion de la informacion del jugador
-    @override
-    public string toString() {
+    @Override
+    public String toString() {
         return "Player{" +
                 "Playername='" + Playername + '\'' +
                 ", wins=" + wins +

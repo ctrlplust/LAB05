@@ -40,6 +40,10 @@ public class HashST<Key, Value> {
         }
         return null;
     }
+    
+    public boolean contains(Key key) {
+    return get(key) != null;
+}
     private static class Node<Key, Value> {
         Key key;
         Value value;
