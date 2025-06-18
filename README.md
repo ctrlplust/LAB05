@@ -3,17 +3,16 @@
 # Compilar
 
 ```
-
-javac -d bin src/*.java TESTING_CLASS/*.java
-
+javac -d bin -cp src src/*.java TESTING_CLASS/*.java
 ```
+
+
+Se compilara todos los codigos.
 
 # Ejecutar
 
 ```
-java -cp bin Main
-<<<<<<< HEAD
+java -cp bin (*Aca el nombre de todas las clases*) // Sin los parentesis.
 ```
-=======
-```
->>>>>>> 785493a (Agregando la clase Player)
+
+
