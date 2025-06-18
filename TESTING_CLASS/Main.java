@@ -15,10 +15,10 @@ public class Main {
         // === Test de BST ===
         System.out.println("\n=== Test BST ===");
         BST bst = new BST();
-        bst.insert(15);
-        bst.insert(10);
-        bst.insert(5);
-        bst.insert(4);
+        bst.insert(15, null);
+        bst.insert(10, null);
+        bst.insert(5, null);
+        bst.insert(4, null);
 
         System.out.print("En orden (BST): ");
         bst.inorder(); // Esperado: 4 5 10 15

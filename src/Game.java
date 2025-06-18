@@ -31,10 +31,10 @@ public class Game {
      private void actualizarEstado() {
         char resultado = connectFour.isGameOver();
         if(resultado == 'X') {
-            status = "WIN";
+            status = "VICTORY";
             winnerPlayerName = playerNameA;
         } else if (resultado == 'O') {
-            status = "WIN";
+            status = "VICTORY";
             winnerPlayerName = playerNameB;
         } else if (resultado == 'D') {
             status = "DRAW";
@@ -72,7 +72,7 @@ public class Game {
         System.out.println("=== Comienza el juego Conecta 4 ===");
 
         while (getStatus().equals("IN_PROGRESS")) {
-            imprimirTablero(connectFour.getGrid());
+            imprimirTablero();
             System.out.println("Turno de " + (getCurrentPlayerSymbol() == 'X' ? playerNameA : playerNameB));
             System.out.print("Ingresa columna (0-6): ");
             
@@ -90,7 +90,7 @@ public class Game {
             }
         }
 
-        imprimirTablero(connectFour.getGrid());
+        imprimirTablero();
 
         if (getStatus().equals("VICTORY")) {
             System.out.println("¡Victoria para " + winnerPlayerName + "!");
@@ -102,7 +102,8 @@ public class Game {
 
         return " ";
     }
-    private void imprimirTablero(char[][] grid) {
+        public void imprimirTablero() {
+        char[][] grid = connectFour.getGrid();
         System.out.println("\nTablero actual:");
         for (int row = 0; row < 6; row++) {
             for (int col = 0; col < 7; col++) {
