@@ -47,6 +47,89 @@ public ConnectFour() {
 
     return false; // Columna llena
     }
-}
 
+    // Metodo isGameOver, para verificar si el juego ha terminado (Ganador o empate)
+    public char isGameOver() {
+        // Horizontal →
+        for (int row = 0; row < 6; row++) {
+            for (int col = 0; col <= 3; col++) {
+                char symbol = grid[col][row];
+                if (symbol != ' ' && symbol == grid[col+1][row] && symbol == grid[col+2][row] && symbol == grid[col+3][row]) {
+                    return symbol;
+                }
+            }
+        }
+        /*
+        → Horizontal
+        X X X X
+        */
+
+        // Vertical ↓
+        for (int col = 0; col < 7; col++) {
+            for (int row = 0; row <= 2; row++) {
+                char symbol = grid[col][row];
+                if (symbol != ' ' &&
+                    symbol == grid[col][row+1] && symbol == grid[col][row+2] && symbol == grid[col][row+3]) {
+                    return symbol;
+                }
+            }
+        }
+        /*
+        ↓ Vertical
+        X
+        X
+        X
+        X
+        */
+
+        // Diagonal ↘
+        for (int col = 0; col <= 3; col++) {
+            for (int row = 0; row <= 2; row++) {
+                char symbol = grid[col][row];
+                if (symbol != ' ' && symbol == grid[col+1][row+1] && symbol == grid[col+2][row+2] && symbol == grid[col+3][row+3]) {
+                    return symbol;
+                }
+            }
+        }
+        /*
+        ↘ Diagonal
+        X
+          X
+            X
+              X
+        */
+
+        // Diagonal ↗
+        for (int col = 0; col <= 3; col++) {
+            for (int row = 3; row <= 5; row++) {
+                char symbol = grid[col][row];
+                if (symbol != ' ' &&
+                    symbol == grid[col+1][row-1] &&  symbol == grid[col+2][row-2] && symbol == grid[col+3][row-3]) {
+                    return symbol;
+                }
+            }
+        }
+        /*
+        ↗ Diagonal
+      X
+        X
+          X
+            X
+        */
+
+        // Empate
+        boolean full = true;
+        for (int col = 0; col < 7; col++) {
+            for (int row = 0; row < 6; row++) {
+                if (grid[col][row] == ' ') {
+                    full = false;
+                    break;
+                }
+            }
+        }
+
+        if (full) return 'D'; // Empate
+        return ' '; // Juego no ha terminado
+    }
+}
 
