@@ -50,28 +50,31 @@ public class Player {
     public int getDraws() {
         return draws;
     }
-/*
+    
+// Dejo esto como comentario ya que no es necesario dejarlo implementado en el codigo, Es solo para un futuro si se quiere cambiar el diseño del codigo
+// como ejemplo cuando vas a comparar jugadores  con con contains(new Player("Nombre")) ,  para tambien sobre escribir el Hash Code.
+// y el toString es para la depuracion, para las pruebas y mostrar informacion del objeto mas legible
+    
     // se sobreescribe el metodo equals para poder definir cuando dos objetos Player son iguales
     // en este caso, dos objetos Player son iguales si tienen el mismo nombre de jugador
-    @Override
-    public boolean equals(Object o) {
-        if(this == o) return true; // Verifica si son el mismo objeto
-        if(!(o instanceof Player))
-        return false; // Esto esta viendo si es una instancia o no, No son iguales
-        Player other = (Player) o;
-        return Playername.equals(other.Playername); // compara los nombres de los jugadores
-    }
+  //  @Override
+  //  public boolean equals(Object o) {
+      //  if(this == o) return true; // Verifica si son el mismo objeto
+       // if(!(o instanceof Player))
+      //  return false; // Esto esta viendo si es una instancia o no, No son iguales
+      //  Player other = (Player) o;
+      //  return Playername.equals(other.Playername); // compara los nombres de los jugadores
+ //   }
 
 
     //depuracion para la impresion de la informacion del jugador
-    @Override
-    public String toString() {
-        return "Player{" +
-                "Playername='" + Playername + '\'' +
-                ", wins=" + wins +
-                ", losses=" + losses +
-                ", draws=" + draws +
-                '}';
-    }
-    /*
+  //  @Override
+  //  public String toString() {
+  //     return "Player{" +
+//             "Playername='" + Playername + '\'' +
+               // ", wins=" + wins +
+              //  ", losses=" + losses +
+              //  ", draws=" + draws +
+              //  '}';
+  //  }
 }
