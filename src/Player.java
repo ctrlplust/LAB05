@@ -50,7 +50,7 @@ public class Player {
     public int getDraws() {
         return draws;
     }
-
+/*
     // se sobreescribe el metodo equals para poder definir cuando dos objetos Player son iguales
     // en este caso, dos objetos Player son iguales si tienen el mismo nombre de jugador
     @Override
@@ -73,4 +73,5 @@ public class Player {
                 ", draws=" + draws +
                 '}';
     }
+    /*
 }
